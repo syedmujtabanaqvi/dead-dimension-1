@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEAD DIMENSION // The Upside Down Broadcast</title>
+    <title>DEAD DIMENSION // Emergency Transmission</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -26,7 +26,6 @@
                     animation: {
                         stFlicker: 'stFlicker 2.5s infinite',
                         pulseSlow: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        sporeDrift: 'sporeDrift 10s linear infinite',
                     },
                     keyframes: {
                         stFlicker: {
@@ -66,7 +65,7 @@
             box-shadow: inset 0 0 150px rgba(0,0,0,0.95), inset 0 0 250px rgba(229,9,20,0.2);
         }
 
-        /* Stranger Things Red Glow Title */
+        /* Red Glow Title */
         .st-title-text {
             font-family: 'ITC Benguiat', 'Benguiat', serif;
             color: #e50914;
@@ -75,10 +74,6 @@
                          0 0 50px rgba(229, 9, 20, 0.4),
                          0 0 100px rgba(229, 9, 20, 0.2);
             letter-spacing: 0.15em;
-        }
-
-        .st-cyan-glow {
-            text-shadow: 0 0 8px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.4);
         }
 
         /* Custom Scrollbar */
@@ -100,21 +95,19 @@
     <div class="fixed inset-0 pointer-events-none scanlines z-50 opacity-40"></div>
     <div class="fixed inset-0 pointer-events-none vignette z-40"></div>
 
-    <!-- Upside Down Spores Canvas -->
+    <!-- Zombie Spores / Fog Canvas -->
     <canvas id="sporeCanvas" class="fixed inset-0 pointer-events-none z-10 opacity-60"></canvas>
 
     <!-- Main Container -->
     <div class="relative z-20 flex flex-col min-h-screen">
 
-        <!-- Hawkins National Laboratory Header Bar -->
+        <!-- Header Bar -->
         <header class="w-full bg-stPaper/90 border-b-2 border-stRed/50 py-3 px-4 text-center relative overflow-hidden backdrop-blur-md">
             <div class="absolute inset-0 bg-red-950/20 animate-pulse"></div>
             <div class="relative z-10 flex flex-wrap justify-center items-center gap-4 text-xs md:text-sm font-mono tracking-widest text-stRed font-bold">
-                <span class="flex items-center gap-1 text-stCyan"><i class="fa-solid fa-radiation"></i> Dimension D // CLASSIFIED QR STREAM</span>
+                <span class="flex items-center gap-1 text-stCyan"><i class="fa-solid fa-radiation"></i> SECTOR 4 // QUARANTINE BROADCAST</span>
                 <span class="hidden md:inline text-zinc-600">|</span>
-                <span>DIMENSION: <span class="text-stRed animate-stFlicker">Dark World</span></span>
-                <span class="hidden md:inline text-zinc-600">|</span>
-                <span class="text-zinc-400">Status: Signal unstable. Interference detected</span>
+                <span>STATUS: <span class="text-stRed animate-stFlicker">Horde Breach Imminent</span></span>
             </div>
         </header>
 
@@ -122,10 +115,10 @@
         <section class="flex-grow flex flex-col items-center justify-center px-4 py-12 text-center max-w-5xl mx-auto w-full">
             
             <div class="mb-3 text-stCyan text-xs md:text-sm font-mono tracking-widest uppercase animate-pulse border border-stCyan/30 px-3 py-1 rounded bg-stCyan/5">
-                [ QR CODE SCANNED SUCCESSFULLY // AUDIO LOG UNLOCKED ]
+                [ QR SCAN VERIFIED // AUDIO LOG UNLOCKED ]
             </div>
 
-            <!-- Stranger Things Style Series Title -->
+            <!-- Series Title -->
             <div class="my-4 transform hover:scale-105 transition-transform duration-500 select-none">
                 <h1 class="st-title-text text-5xl sm:text-7xl md:text-9xl uppercase font-bold animate-stFlicker">
                     DEAD<br class="block sm:hidden"> DIMENSION
@@ -136,27 +129,27 @@
                 "The gate is open. Put on your headphones and listen to the intercepted audio transmission before the zombie detects the signal."
             </p>
 
-            <!-- 80s Cassette Tape & Boombox Audio Player UI -->
+            <!-- Audio Player Card -->
             <div class="mt-10 w-full max-w-2xl bg-gradient-to-b from-slate-900 to-black border-2 border-stRed/60 rounded-2xl p-6 md:p-8 shadow-[0_0_50px_rgba(229,9,20,0.25)] relative overflow-hidden">
                 
-                <!-- Deck Glow Accents -->
+                <!-- Glow Accents -->
                 <div class="absolute -top-12 -right-12 w-32 h-32 bg-stRed/20 rounded-full blur-2xl pointer-events-none"></div>
                 <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-stCyan/20 rounded-full blur-2xl pointer-events-none"></div>
 
-                <!-- Cassette Window Top -->
+                <!-- Deck Status Top -->
                 <div class="flex items-center justify-between mb-6 pb-4 border-b border-zinc-800">
                     <div class="flex items-center gap-2">
                         <div class="w-3 h-3 rounded-full bg-stRed animate-ping"></div>
                         <span id="audioStatusText" class="text-xs font-mono text-stRed tracking-wider uppercase font-bold">DECK A: READY FOR PLAYBACK</span>
                     </div>
-                    <span  class="text-xs text-stCyan font-mono truncate max-w-[220px]">Dimension D.mp3</span>
+                    <span  class="text-xs text-stCyan font-mono truncate max-w-[220px]">Dead Dimension Log.mp3</span>
                 </div>
 
-                <!-- Retro Cassette Tape Graphic Box -->
+                <!-- Cassette Tape Graphic Box -->
                 <div class="relative bg-zinc-950 border-2 border-zinc-700 rounded-xl p-4 mb-6 shadow-inner flex flex-col items-center">
                     <div class="w-full flex justify-between items-center text-[10px] text-zinc-500 font-mono mb-2">
-                        <span>NORMAL [I] POSITION</span>
-                        <span class="text-stRed">STEREO DOLBY SYSTEM</span>
+                        <span>EMERGENCY BAND [I]</span>
+                        <span class="text-stRed">INFECTED ZONE AUDIO</span>
                         <span>SIDE A</span>
                     </div>
 
@@ -172,7 +165,7 @@
                         <!-- Tape Label Middle -->
                         <div class="mx-4 text-center flex-grow bg-amber-100/10 border border-amber-900/30 rounded py-1 px-2">
                             <div class="text-[10px] font-mono text-amber-500/80 tracking-widest">DEAD DIMENSION</div>
-                            <div class="text-xs font-stTitle text-zinc-200 tracking-wider">Dimension D</div>
+                            <div class="text-xs font-stTitle text-zinc-200 tracking-wider">Audio Transmission</div>
                         </div>
 
                         <!-- Right Reel -->
@@ -189,7 +182,7 @@
                     </div>
                 </div>
 
-                <!-- HTML5 Audio Element (Hidden) -->
+                <!-- HTML5 Audio Element -->
                 <audio id="promoAudio" preload="metadata"></audio>
 
                 <!-- Player Controls & Timeline -->
@@ -205,23 +198,44 @@
 
                     <!-- Action Buttons -->
                     <div class="flex flex-wrap items-center justify-center gap-4 mt-2">
-                        <!-- Play / Pause 80s Button -->
+                        <!-- Play / Pause Button -->
                         <button id="playBtn" class="flex items-center gap-3 bg-stRed hover:bg-red-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-[0_0_20px_rgba(229,9,20,0.5)] transition-all transform active:scale-95 text-lg font-mono tracking-wider border border-red-500">
                             <i id="playIcon" class="fa-solid fa-play"></i> <span id="playBtnText">PLAY TAPE</span>
                         </button>
                     </div>
                 </div>
 
-                
-
             </div>
 
+            <!-- CATCHY SUSPENSE TEASER HOOK & CALL TO ACTION -->
+            <div class="mt-10 w-full max-w-2xl bg-gradient-to-b from-red-950/40 to-black border-2 border-stRed/80 rounded-2xl p-6 md:p-8 shadow-[0_0_40px_rgba(229,9,20,0.3)] relative overflow-hidden text-center">
+                
+                <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-stRed/20 rounded-full blur-xl pointer-events-none"></div>
+
+                <!-- Badge -->
+                <div class="inline-block bg-stRed text-white text-[11px] font-mono tracking-widest px-3 py-1 rounded-full uppercase mb-4 animate-bounce">
+                    ⚠️ CLASSIFIED FOOTAGE UNLOCKED ⚠️
+                </div>
+
+                <!-- Catchy Line -->
+                <h3 class="text-xl md:text-2xl font-bold text-white tracking-wide mb-2">
+                    "Suna to tumne... Par kya tum dekhne ki himmat rakhte ho ki is broadcast ke baad kya hua?"
+                </h3>
+                
+
+                <!-- Direct Teaser Button -->
+                <a href="https://youtu.be/RmNsFOCa8mk?si=_177MVGuOmB0WiCR" target="_blank" class="w-full group relative inline-flex items-center justify-center px-8 py-4 font-mono text-lg font-bold tracking-widest text-white uppercase bg-stRed border-2 border-red-500 rounded-xl shadow-[0_0_30px_rgba(229,9,20,0.6)] hover:shadow-[0_0_50px_rgba(229,9,20,0.9)] hover:bg-red-700 transition-all duration-300 transform active:scale-95">
+                    <span class="relative flex items-center gap-3">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-300 animate-pulse"></i> KHOLNE KI HIMMAT HAI? [WATCH TEASER] <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
     
         </section>
 
         <!-- Footer -->
         <footer class="w-full bg-stPaper border-t border-zinc-900 py-6 text-center text-xs text-zinc-600 font-mono">
-            <p>DEAD DIMENSION &copy; </p>
+            <p>DEAD DIMENSION &copy; 2026 // ALL RIGHTS RESERVED</p>
         </footer>
 
     </div>
@@ -233,7 +247,7 @@
     </div>
 
     <script>
-        // Upside Down Spores Canvas Animation
+        // Spores / Fog Canvas Animation
         const canvas = document.getElementById('sporeCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -252,7 +266,7 @@
                 radius: Math.random() * 2.5 + 0.5,
                 color: Math.random() > 0.4 ? 'rgba(229, 9, 20, 0.35)' : 'rgba(0, 240, 255, 0.35)',
                 vx: (Math.random() - 0.5) * 0.3,
-                vy: -Math.random() * 0.6 - 0.2
+                vy: -Math.random() * 0.6
             });
         }
 
@@ -274,7 +288,7 @@
         }
         animateSpores();
 
-        // Audio Visualizer Equalizer setup
+        // Audio Visualizer Setup
         const visualizer = document.getElementById('visualizer');
         const barCount = 32;
         const bars = [];
@@ -286,7 +300,7 @@
             bars.push(bar);
         }
 
-        // Audio Player Setup & 80s Synth/Atmosphere Presets
+        // Audio Player Setup
         const promoAudio = document.getElementById('promoAudio');
         const playBtn = document.getElementById('playBtn');
         const playIcon = document.getElementById('playIcon');
@@ -297,14 +311,12 @@
         const progressBarContainer = document.getElementById('progressBarContainer');
         const currentTimeEl = document.getElementById('currentTime');
         const durationEl = document.getElementById('duration');
-        const switchTrackBtn = document.getElementById('switchTrackBtn');
-        const audioUpload = document.getElementById('audioUpload');
         const leftReel = document.getElementById('leftReel');
         const rightReel = document.getElementById('rightReel');
 
         const tracks = [
             {
-                name: "Upside_Down_Synth_Teaser.mp3",
+                name: "Dead_Dimension_Log.mp3",
                 url: "https://res.cloudinary.com/ddviuaaca/video/upload/v1791629715/Sequence_09_1_f3a7po.mp4"
             }
         ];
@@ -378,29 +390,6 @@
             }
         });
 
-        switchTrackBtn.addEventListener('click', () => {
-            const nextIndex = (currentTrackIndex + 1) % tracks.length;
-            loadTrack(nextIndex);
-            showToast(`Loaded Preset: ${tracks[nextIndex].name}`);
-            if (isPlaying) {
-                promoAudio.play();
-            }
-        });
-
-        audioUpload.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const fileURL = URL.createObjectURL(file);
-                promoAudio.src = fileURL;
-                audioTrackName.textContent = file.name;
-                promoAudio.load();
-                showToast(`Custom cassette audio loaded successfully!`);
-                if (!isPlaying) {
-                    playBtn.click();
-                }
-            }
-        });
-
         function startVisualizerAnimation() {
             if (animationInterval) clearInterval(animationInterval);
             animationInterval = setInterval(() => {
@@ -429,9 +418,6 @@
             return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-        // Copy Link & Download QR
-        const copyLinkBtn = document.getElementById('copyLinkBtn');
-        const downloadQrBtn = document.getElementById('downloadQrBtn');
         const toast = document.getElementById('toast');
         const toastMsg = document.getElementById('toastMsg');
 
@@ -442,36 +428,6 @@
                 toast.classList.add('translate-y-20', 'opacity-0');
             }, 3000);
         }
-
-        copyLinkBtn.addEventListener('click', () => {
-            const dummyUrl = window.location.href;
-            const textArea = document.createElement('textarea');
-            textArea.value = dummyUrl;
-            document.body.appendChild(textArea);
-            textArea.select();
-            try {
-                document.execCommand('copy');
-                showToast("Hawkins promo link copied to clipboard!");
-            } catch (err) {
-                showToast("Failed to copy link.");
-            }
-            document.body.removeChild(textArea);
-        });
-
-        downloadQrBtn.addEventListener('click', () => {
-            const svgElement = document.getElementById('qrSvg');
-            const svgString = new XMLSerializer().serializeToString(svgElement);
-            const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const downloadLink = document.createElement('a');
-            downloadLink.href = url;
-            downloadLink.download = 'DEAD_DIMENSION_HAWKINS_QR.svg';
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-            showToast("QR code SVG downloaded successfully!");
-        });
     </script>
-
 </body>
 </html>
